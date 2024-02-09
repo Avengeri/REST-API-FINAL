@@ -1,0 +1,17 @@
+syntax = "proto3";
+package grpc_tutorial;
+
+
+option go_package = "./gen;pb";
+
+service UserService {
+  rpc GetAllUserIDService (GetAllUserRequest) returns (GetAllUserResponse);
+}
+
+message GetAllUserResponse {
+  repeated int32 user_ids = 1;
+}
+
+message GetAllUserRequest {
+  // Здесь нет полей, так как метод не принимает аргументов
+}
